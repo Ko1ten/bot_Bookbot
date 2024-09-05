@@ -9,14 +9,14 @@ class TgBot:
 
 @dataclass
 class Config:
-    tgbot : TgBot
+    tg_bot : TgBot
 
 
 def load_config(path: str | None = None) -> Config:
     env = Env()
     env.read_env(path)
     return Config(
-        tgbot=TgBot(
+        tg_bot=TgBot(
             token=env('BOT_TOKEN'),
             admin_ids=list(map(int, env.list('ADMIN_IDS')))
         )

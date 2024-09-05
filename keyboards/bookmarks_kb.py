@@ -24,7 +24,7 @@ def create_bookmarks_keyboard(*args: int) -> InlineKeyboardMarkup:
             callback_data='cancel'
         ),
         width=2
-    )    
+    )
     return kb_builder.as_markup()
 
 
@@ -34,7 +34,7 @@ def create_edit_keyboard(*args: int) -> InlineKeyboardMarkup:
     # Наполняем клавиатуру кнопками-закладками в порядке возрастания
     for button in sorted(args):
         kb_builder.row(InlineKeyboardButton(
-            text=f'{LEXICON['del']} {button} - {book[button][:100]}',
+            text=f'{LEXICON["del"]} {button} - {book[button][:100]}',
             callback_data=f'{button}del'
             )
         )
